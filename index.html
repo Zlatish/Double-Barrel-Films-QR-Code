@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Double-Barrel Films · Links</title>
+<meta name="description" content="Double-Barrel Films: cinematic wedding films. Packages, website, Instagram, gallery and enquiries.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f9f6f2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=Lato:wght@300;400&family=Noticia+Text:wght@400&display=swap" rel="stylesheet">
+<style>
+  /* ---- Brand tokens: sampled from doublebarrelfilms.co.uk ---- */
+  :root {
+    --cream: #f9f6f2;     /* header and panel background */
+    --paper: #ffffff;     /* content sections */
+    --ink: #000000;       /* logo, headings, button outlines */
+    --text: #2f2f2f;      /* body copy */
+    --muted: #565656;     /* "FILMS" under the logo */
+    --rule: #d9d3ca;
+    --logo: "Lato", "Helvetica Neue", Arial, sans-serif;   /* thin, wide-tracked like their logo + nav */
+    --serif: "Palatino Linotype", Palatino, "Book Antiqua", "Libre Baskerville", Georgia, serif;   /* their headings */
+    --body: "Noticia Text", Georgia, serif;   /* their body copy */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: var(--body);
+    min-height: 100svh;
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: max(40px, env(safe-area-inset-top)) 24px max(40px, env(safe-area-inset-bottom));
+  }
+
+  /* Logo lockup, centred like their site header */
+  .logo {
+    display: block;
+    text-align: center;
+    font-family: var(--logo);
+    font-weight: 400;
+    color: var(--ink);
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: .55em;
+    padding-left: .55em;   /* balances the trailing letter-space so it sits truly centred */
+    line-height: 1;
+  }
+  .logo small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: .55em;
+    color: var(--muted);
+    margin-top: 10px;
+    margin-left: -9.35px;   /* undo the logo's balancing padding */
+    padding-left: .55em;
+    text-align: center;
+  }
+
+  /* Offset white panel: echoes the cream/white blocks on their site */
+  .intro {
+    margin: 48px -24px 0 36px;
+    padding: 34px 24px 34px 28px;
+    background: var(--paper);
+    border-left: 1px solid var(--ink);
+  }
+  .kicker {
+    font-family: var(--serif);
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: 10.5px;
+    color: #464646;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--ink);
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    line-height: 1.25;
+    margin-top: 16px;
+  }
+  .intro p {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 32ch;
+  }
+
+  /* ---- Links ---- */
+  nav { margin-top: 40px; }
+  nav ol { list-style: none; display: grid; gap: 12px; }
+
+  .link {
+    display: grid;
+    grid-template-columns: 30px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    min-height: 68px;
+    padding: 18px 18px 18px 16px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+  }
+  nav li:nth-child(even) .link { margin-left: 32px; }
+  nav li:nth-child(odd):not(:first-child) .link { margin-right: 32px; }
+
+  .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .label {
+    display: block;
+    font-family: var(--logo);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .24em;
+    font-size: 13px;
+  }
+  .sub {
+    display: block;
+    font-family: var(--body);
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .arrow { width: 22px; height: 22px; display: grid; place-items: center; transition: transform .2s ease; }
+  .arrow svg { width: 18px; height: 18px; }
+
+  .link:hover, .link:focus-visible { background: var(--paper); transform: translateX(3px); }
+  .link:hover .arrow, .link:focus-visible .arrow { transform: translateX(3px); }
+  .link:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+  /* Featured link: solid black, like a film frame */
+  .link.feature { background: var(--ink); color: var(--cream); padding-top: 24px; padding-bottom: 24px; }
+  .link.feature .num, .link.feature .sub { color: #bdb7ae; }
+  .link.feature .label { font-size: 14px; }
+  .link.feature:hover, .link.feature:focus-visible { background: #1d1b19; }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 12px;
+    font-family: var(--logo);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: 10.5px;
+    color: var(--muted);
+  }
+  footer a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  @media (min-width: 560px) { .wrap { padding-top: 64px; } }
+  /* Small phones (iPhone SE and similar): tighten tracking so nothing wraps awkwardly */
+  @media (max-width: 374px) {
+    .logo { font-size: 15px; letter-spacing: .45em; padding-left: .45em; }
+    .logo small { margin-left: -6.75px; }
+    .kicker { letter-spacing: .1em; }
+    .label { letter-spacing: .14em; }
+    .link.feature .label { font-size: 13px; }
+    nav li:nth-child(even) .link { margin-left: 20px; }
+    nav li:nth-child(odd):not(:first-child) .link { margin-right: 20px; }
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="logo" aria-label="Double-Barrel Films">Double-Barrel<small>Films</small></div>
+      <section class="intro">
+        <p class="kicker">Cinematic wedding films</p>
+        <h1>Capturing and preserving fleeting moments.</h1>
+        <p>Kyle and Sophie, a husband and wife duo filming weddings across the North East, the UK and beyond.</p>
+      </section>
+    </header>
+
+    <!-- To add/remove a link: copy or delete one <li> block. -->
+    <nav aria-label="Links">
+      <ol>
+        <li>
+          <a class="link feature" href="https://www.doublebarrelfilms.co.uk/package">
+            <span class="num">01</span>
+            <span><span class="label">Wedding Packages</span><span class="sub">What's included in each package</span></span>
+            <span class="arrow" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 9h14M11 4l5 5-5 5"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="link" href="https://www.doublebarrelfilms.co.uk/">
+            <span class="num">02</span>
+            <span><span class="label">Website</span><span class="sub">Our films and story</span></span>
+            <span class="arrow" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 9h14M11 4l5 5-5 5"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="link" href="https://www.instagram.com/doublebarrel_films/" target="_blank" rel="noopener">
+            <span class="num">03</span>
+            <span><span class="label">Instagram</span><span class="sub">@doublebarrel_films</span></span>
+            <span class="arrow" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 9h14M11 4l5 5-5 5"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="link" href="https://galleries.vidflow.co/a75qn3cj" target="_blank" rel="noopener">
+            <span class="num">04</span>
+            <span><span class="label">Gallery</span><span class="sub">A showcase of our films</span></span>
+            <span class="arrow" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 9h14M11 4l5 5-5 5"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="link" href="https://www.doublebarrelfilms.co.uk/contact">
+            <span class="num">05</span>
+            <span><span class="label">Enquire</span><span class="sub">Check your date with us</span></span>
+            <span class="arrow" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 9h14M11 4l5 5-5 5"/></svg></span>
+          </a>
+        </li>
+      </ol>
+    </nav>
+
+    <footer>
+      <span>© <span id="y">2026</span> Double-Barrel</span>
+      <a href="https://www.doublebarrelfilms.co.uk/">doublebarrelfilms.co.uk</a>
+    </footer>
+  </main>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
